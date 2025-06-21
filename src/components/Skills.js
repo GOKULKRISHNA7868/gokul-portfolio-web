@@ -34,9 +34,9 @@ const softSkills = [
 
 export default function Skills() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16 text-gray-800 bg-white">
+    <div className="max-w-6xl mx-auto px-6 py-16 text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900">
       <motion.h2
-        className="text-4xl font-bold text-blue-700 mb-8 text-center"
+        className="text-4xl font-bold text-blue-700 dark:text-blue-400 mb-8 text-center"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -46,7 +46,7 @@ export default function Skills() {
       </motion.h2>
 
       <motion.p
-        className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12"
+        className="text-center text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
@@ -65,17 +65,17 @@ export default function Skills() {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <h3 className="text-2xl font-semibold text-blue-600 mb-4">Technical Skills</h3>
-        <div className="flex flex-wrap gap-4">
+        <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-300 mb-4 text-center">Technical Skills</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {techSkills.map((skill, i) => (
-            <div
+            <motion.div
               key={i}
-              className="flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full shadow-sm hover:scale-105 transition-transform"
+              className="flex flex-col items-center justify-center gap-2 bg-blue-50 dark:bg-blue-900 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-600 p-4 rounded-xl shadow hover:shadow-md hover:scale-105 transition-transform"
+              whileHover={{ scale: 1.05 }}
             >
-              {skill.icon}
-              {skill.altIcon && skill.altIcon}
-              <span>{skill.name}</span>
-            </div>
+              <div className="text-3xl">{skill.icon} {skill.altIcon}</div>
+              <span className="text-sm font-medium text-center">{skill.name}</span>
+            </motion.div>
           ))}
         </div>
       </motion.div>
@@ -87,16 +87,17 @@ export default function Skills() {
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <h3 className="text-2xl font-semibold text-blue-600 mb-4">Leadership & Interpersonal Skills</h3>
-        <div className="flex flex-wrap gap-4">
+        <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-300 mb-4 text-center">Leadership & Interpersonal Skills</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {softSkills.map((skill, i) => (
-            <div
+            <motion.div
               key={i}
-              className="flex items-center gap-2 bg-violet-100 text-violet-800 px-4 py-2 rounded-full shadow-sm hover:scale-105 transition-transform"
+              className="flex flex-col items-center justify-center gap-2 bg-violet-50 dark:bg-violet-900 text-violet-800 dark:text-violet-200 border border-violet-200 dark:border-violet-600 p-4 rounded-xl shadow hover:shadow-md hover:scale-105 transition-transform"
+              whileHover={{ scale: 1.05 }}
             >
-              {skill.icon}
-              <span>{skill.name}</span>
-            </div>
+              <div className="text-3xl">{skill.icon}</div>
+              <span className="text-sm font-medium text-center">{skill.name}</span>
+            </motion.div>
           ))}
         </div>
       </motion.div>

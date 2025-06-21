@@ -13,7 +13,7 @@ export default function Footer() {
         <h3 className="text-lg font-semibold mb-4">Connect with me</h3>
         <div className="flex justify-center space-x-6 text-2xl">
           <a
-            href="https://github.com/gokul"
+            href="https://github.com/GOKULKRISHNA7868"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-300 transition-transform transform hover:scale-125"
@@ -35,7 +35,7 @@ export default function Footer() {
             <FaEnvelope />
           </a>
           <a
-            href="https://instagram.com/your_instagram_here"
+            href="https://www.instagram.com/gokul_krishna.t?igsh=dzNqaHNlYjExYjk4&utm_source=qr"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-300 transition-transform transform hover:scale-125"
@@ -44,7 +44,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="mt-6 text-sm">
-          © {new Date().getFullYear()} Gokul Krishna. All rights reserved.
+          © {new Date().getFullYear()} Tupakula Gokul Krishna. All rights reserved.
         </p>
       </div>
     </footer>

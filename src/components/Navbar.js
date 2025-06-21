@@ -8,6 +8,7 @@ const navItems = [
   { name: 'Skills', to: 'skills' },
   { name: 'Projects', to: 'projects' },
   { name: 'Gallery', to: 'gallery' },
+  { name: 'Contact', to: 'contact' },
 ];
 
 export default function Navbar() {

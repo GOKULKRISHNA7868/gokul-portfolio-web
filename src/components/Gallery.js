@@ -8,11 +8,11 @@ const gallerySections = [
     description: 'Snapshots from my travel and personal growth — beyond the screen and into the world.',
     images: ['/seminar1.jpg', '/seminar2.jpg', '/project1.jpg', '/j1.jpg', '/j2.jpg', '/j3.jpg'],
   },
-  {
-    title: 'Friends & Memories',
-    description: 'Cherished memories with friends through college events, outings, and shared milestones.',
-    images: ['/friends1.jpg', '/friends2.jpg'],
-  },
+  //{
+    //title: 'Friends & Memories',
+    //description: 'Cherished memories with friends through college events, outings, and shared milestones.',
+    //images: ['/friends1.jpg', '/friends2.jpg'],
+  //},
   {
     title: 'Campus Life & Events',
     description: 'Highlights from hackathons, college fests, project expos, and tech activities.',

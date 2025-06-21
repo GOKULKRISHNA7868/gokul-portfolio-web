@@ -38,9 +38,9 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16 bg-gray-50 text-gray-900">
+    <div className="max-w-6xl mx-auto px-6 py-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <motion.h2
-        className="text-4xl font-bold text-blue-700 mb-4 text-center"
+        className="text-4xl font-bold text-blue-700 dark:text-blue-400 mb-4 text-center"
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -50,7 +50,7 @@ export default function Projects() {
       </motion.h2>
 
       <motion.p
-        className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12"
+        className="text-center text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
@@ -63,14 +63,14 @@ export default function Projects() {
         {projects.map((proj, i) => (
           <motion.div
             key={i}
-            className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105"
+            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-semibold text-blue-700 mb-2">{proj.title}</h3>
-            <p className="text-gray-700">{proj.desc}</p>
+            <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-2">{proj.title}</h3>
+            <p className="text-gray-700 dark:text-gray-300">{proj.desc}</p>
           </motion.div>
         ))}
       </div>

@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import Contact from './components/Contact';
 
 export default function App() {
   return (
@@ -25,6 +26,9 @@ export default function App() {
       </section>
       <section id="gallery">
         <Gallery />
+      </section>
+      <section id="contact">
+        <Contact />
       </section>
       <Footer />
     </div>
