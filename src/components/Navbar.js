@@ -12,9 +12,8 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
-  });
+  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -31,7 +30,8 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         <h1 className="text-xl font-bold text-blue-700 dark:text-white">Tupakula Gokul Krishna</h1>
 
-        <div className="flex items-center space-x-4 text-gray-700 dark:text-gray-200 font-medium">
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-6 text-gray-700 dark:text-gray-200 font-medium">
           {navItems.map((item, index) => (
             <Link
               key={index}
@@ -45,7 +45,6 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="text-xl p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition"
@@ -54,7 +53,44 @@ export default function Navbar() {
             {darkMode ? <FaSun /> : <FaMoon />}
           </button>
         </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-4">
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="text-xl p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+            title="Toggle Dark Mode"
+          >
+            {darkMode ? <FaSun /> : <FaMoon />}
+          </button>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-2xl text-gray-700 dark:text-gray-200"
+            aria-label="Toggle Menu"
+          >
+            ☰
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-md px-4 py-3 space-y-2 z-40">
+          {navItems.map((item, index) => (
+            <Link
+              key={index}
+              to={item.to}
+              smooth
+              offset={-70}
+              duration={500}
+              onClick={() => setMenuOpen(false)}
+              className="block cursor-pointer text-gray-800 dark:text-gray-200 hover:text-blue-600"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
